@@ -1,0 +1,13 @@
+@import "tailwindcss";
+.active{
+    border-top:1px solid;
+}
+@font-face {
+  font-family: 'MyFont';
+  src: url('./assets/fonts/ShareTech-Regular.ttf');
+  font-weight: lighter;
+  font-style: normal;
+}
+.font-my-font{
+  font-family: 'MyFont',sans-serif;
+}
