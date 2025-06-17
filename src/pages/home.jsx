@@ -2,17 +2,26 @@ import meImage from '../assets/photos/me.png';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 export default function Home(){
+    useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+           
+    });
+  }, []);
     return(
         <>
         <div class="flex items-center justify-center min-h-screen bg-black text-white">
-            <p className="md:text-9xl font-serif font-my-font text-sm sm:text-base ">HI, I AM DIMASH.
+            <p data-aos="flip-right" className="md:text-9xl font-serif font-my-font text-sm sm:text-base ">HI, I AM DIMASH.
               WEB DEVELOPER</p>
         </div>
         <div class="flex text-white items-center justify-around min-h-screen bg-black flex-col md:flex-row">
-            <img src={meImage} className='max-h-270 min-h-50' alt="me"></img>
-            <div className='flex flex-col gap-5 max-w-200 min-w-50'>
-                <h1 className='font-my-font italic text-6xl  '>- MY STORY</h1>
+            <img data-aos="fade-down-right" src={meImage} className='max-h-270 min-h-50' alt="me"></img>
+            <div data-aos="fade-down-left" className='flex flex-col gap-5 max-w-200 min-w-50'>
+                <h1  className='font-my-font italic text-6xl  '>- MY STORY</h1>
                 <h2 className='font-my-font md:text-2xl italic text-base'>Abstract food for every mood</h2>
                 <h3 className='font-my-font md:text-2xl text-base'>My mom wanted me to be a mathematician when I grew up. So I unintentionally went into a completely different direction. Thankfully my journey here was completely natural, sometimes it seems that I didn't even have a say in it. Always walking the line between the logical and the chaotic, creating designs that range from geometrical minimalism to dynamic color bombs.</h3>
                 <h4 className='font-my-font md:text-2xl text-base'>When I was 12 I picked up Photoshop and started working on some kind of small digital art for forums, which were then called signatures. After a couple of years I switched to Illustrator and that really made me think of Graphic Design as a career path. I mostly focused on Logo Design because I had the freedom to explore a large number of themes and ideas without any real knowledge. At that moment I started looking for clients wherever I could find them, grabbing every job I can get my hands on.</h4>
@@ -21,7 +30,8 @@ export default function Home(){
             </div>
         </div>
         <div class="flex items-center bg-black text-white justify-center md:flex-row flex-col md:gap-x-50 min-h-screen">
-            <div className='flex flex-col gap-5 font-my-font'>
+            <div data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className='flex flex-col gap-5 font-my-font'>
                 <p className='text-3xl md:text-6xl'>
                     Get in touch
                 </p>
@@ -30,7 +40,8 @@ export default function Home(){
                 </p>
             </div>
             
-<form>
+<form data-aos="fade-up"
+     data-aos-anchor-placement="top-center" >
     <div class="grid gap-6 mb-6 md:grid-cols-2">
         <div>
             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
