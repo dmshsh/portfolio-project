@@ -4,8 +4,12 @@ import Home from './pages/home';
 import Portfolio from './pages/portfolio';
 import Contact from './pages/contact';
 import './App.css'
+import '@mantine/core/styles.css';
+
+import { MantineProvider } from '@mantine/core';
 function App() {
   return (
+    <MantineProvider>
     <div className="bg-white min-h-screen text-black overflow-x-hidden ">
       <Navbar />
       <Routes>
@@ -14,6 +18,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>
+    </MantineProvider>
   );
 }
 

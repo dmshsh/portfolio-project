@@ -5,18 +5,18 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-
+import { useFullscreen } from '@mantine/hooks';
+import { Button } from '@mantine/core';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { toggle, fullscreen } = useFullscreen();
   return (
     <>
     <div className="fixed top-0 left-0 w-full z-50 flex justify-around h-20 items-center bg-black hidden md:flex gap-6">
-        <Link to="/">
-          <button className='transition-transform duration-300 hover:scale-110  hover:cursor-pointer '> 
-            <SynagogueIcon style={{ width: '3rem', height: '3rem' ,color:'white' }}/>
-          </button>
-        </Link>
+        
+        <Button onClick={toggle}  color={'black'}>
+      {fullscreen ? 'OUT' : 'FULL'}
+    </Button>
         <div className="flex justify-between gap-10 ">
           <NavLink
             to="/"
@@ -80,6 +80,7 @@ function Navbar() {
 )}
 
         </button>
+        
         </>
   );
 }
